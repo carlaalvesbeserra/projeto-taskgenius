@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<form action="{% url 'tarefas' %}" method="POST">
+      {% csrf_token %}
+      <h1>Cadastre suas tarefas!</h1>
+      <div class="label">
+            <label for="formGroupExampleInput">Título: 
+            </label>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="titulo" id="formGroupExampleInput" placeholder="Título da tarefa">
+      </div>
+      <div class="label">
+            <label for="formGroupExampleInput2">Prazo: </label>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="formGroupExampleInput2" name="prazo" placeholder="Prazo para o término">
+      </div>
+      <div class="div-botao">
+            <input type="submit" value="Enviar" style="width: 200px; cursor: pointer;">
+      </div>
+    </form>
+{% endblock conteudo %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="container">
+        <h1>Tem certeza de que deseja excluir a tarefa "{{ tarefa.titulo }}"?</h1>
+        <form action="{% url 'excluir' id=tarefa.id %}" method="post">
+            {% csrf_token %}
+            <div class="div-botao">
+                <input type="submit" value="Confirmar Exclusão" style="margin: 20px;">
+            </div>
+        </form>
+        <form action="{% url 'lista' %}">
+            <div class="div-botao">
+                <input type="submit" value="Cancelar">
+            </div>
+        </form>
+</div>
+{% endblock conteudo %}

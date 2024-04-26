@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<h1>Tarefas Cadastradas</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Título</th>
+        <th scope="col">Prazo</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for tarefa in tarefas %}
+        <tr>
+            <td>{{ tarefa.titulo }}</td>
+            <td>{{ tarefa.prazo }}</td>
+            <td>
+              <a href="{% url 'editar' id=tarefa.id %}">✏️</a>
+            </td>
+            <td>
+              <a href="{% url 'excluir' id=tarefa.id %}">🗑️</a>
+            </td>
+            {% empty %}
+            <p>Nenhuma tarefa cadastrada</p>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock conteudo %}
