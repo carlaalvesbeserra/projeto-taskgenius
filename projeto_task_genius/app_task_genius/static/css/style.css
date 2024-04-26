@@ -20,6 +20,11 @@ p {
     text-align: center;
 }
 
+table {
+    width: 50%;
+    margin: auto;
+}
+
 .label {
     text-align: center;
     margin-left: -25vw;
